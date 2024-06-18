@@ -185,6 +185,23 @@ Resources:
       Policies:
         - DynamoDBCrudPolicy:
             TableName: !Ref Items
+  GitsyncVpc:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.1/16
+      EnableDnsSupport: true
+      Tags:
+        - Key: Name
+          Value: GitSyncVpc
+  GitsyncSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref GitsyncVpc
+      CidrBlock: 10.0.0.1/24
+      Tags:
+        - Key: Name
+          Value: GitSyncSubnet
+
 Metadata:
   AWS::Composer::Groups:
     Group:

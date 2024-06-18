@@ -1,6 +1,7 @@
 name: Pull Request workflow
 
-on: [pull_request]
+on: 
+  - pull_request
 
 jobs:
   cloudformation-linter:
@@ -9,10 +10,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Linter install
         uses: scottbrenner/cfn-lint-action@v2
         with:
-          command: cfn-lint -t ./vpc.yaml
+          command: cfn-lint -t ./cfn-template.yaml
 
 
