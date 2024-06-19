@@ -62,7 +62,10 @@ Resources:
       Description: !Sub
         - Stack ${AWS::StackName} Function ${ResourceName}
         - ResourceName: ListItems
-      CodeUri: !Sub "s3://johnderinger/cfn-template.yaml"
+      CodeUri:
+        Bucket: johnderinger
+        Key: cfn-template.yaml
+
       Handler: index.handler
       Runtime: nodejs18.x
       MemorySize: 1024
@@ -88,7 +91,10 @@ Resources:
       Description: !Sub
         - Stack ${AWS::StackName} Function ${ResourceName}
         - ResourceName: CreateItem
-      CodeUri: !Sub "s3://johnderinger/cfn-template.yaml"
+      CodeUri:
+        Bucket: johnderinger
+        Key: cfn-template.yaml
+
       Handler: index.handler
       Runtime: nodejs18.x
       MemorySize: 1024
@@ -114,7 +120,10 @@ Resources:
       Description: !Sub
         - Stack ${AWS::StackName} Function ${ResourceName}
         - ResourceName: GetItem
-      CodeUri: !Sub "s3://johnderinger/cfn-template.yaml"
+      CodeUri:
+        Bucket: johnderinger
+        Key: cfn-template.yaml
+
       Handler: index.handler
       Runtime: nodejs18.x
       MemorySize: 1024
@@ -140,7 +149,10 @@ Resources:
       Description: !Sub
         - Stack ${AWS::StackName} Function ${ResourceName}
         - ResourceName: UpdateItem
-      CodeUri: !Sub "s3://johnderinger/cfn-template.yaml"
+      CodeUri:
+        Bucket: johnderinger
+        Key:  cfn-template.yaml
+
       Handler: index.handler
       Runtime: nodejs18.x
       MemorySize: 1024
@@ -166,7 +178,10 @@ Resources:
       Description: !Sub
         - Stack ${AWS::StackName} Function ${ResourceName}
         - ResourceName: DeleteItem
-      CodeUri: !Sub "s3://johnderinger/cfn-template.yaml"
+      CodeUri:
+        Bucket: johnderinger
+        Key:  cfn-template.yaml
+       
       Handler: index.handler
       Runtime: nodejs18.x
       MemorySize: 1024
